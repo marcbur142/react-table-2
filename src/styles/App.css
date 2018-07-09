@@ -1,5 +1,5 @@
 :root {
-  --main-bg-color: #d12b4c; 
+  --main-bg-color: #d12b4c;
 }
 
 /* Base Application Styles */
@@ -99,7 +99,14 @@ body {
   width: 50%;
   float: right;
 }
-
+html input[type=button]{
+  background-color: #fff;
+  border-width: 1px;
+  font-weight: bold;
+}
+html input[type=button]:focus{
+  outline:0;
+}
 
 @media only screen and (max-width: 1000px) {
   body,.sort-column{
@@ -136,8 +143,8 @@ body {
   border-radius: 0;
 }
 .sweet-alert button {
-  -webkit-border-radius:0; 
-  border-radius: 0; 
+  -webkit-border-radius:0;
+  border-radius: 0;
   background-color: var(--main-bg-color);
 }
 .confirm{

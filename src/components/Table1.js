@@ -2,6 +2,7 @@ require('normalize.css/normalize.css');
 require('styles/App.css');
 
 import React from 'react';
+import axios from 'axios';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import SweetAlert from 'sweetalert-react'; // eslint-disable-line import/no-extraneous-dependencies
 import 'sweetalert/dist/sweetalert.css';
@@ -34,41 +35,98 @@ var products = [{
   url: "http://builds.proximetry.com:10005/notifications/mail",
   activ: false,
   trigger: "hook"
+},{
+  id: "dephook",
+  branch: "dep",
+  price: 100,
+  url: "http://builds.proximetry.com:10005/notifications/mail",
+  activ: false,
+  trigger: "hook"
+},{
+  id: "dephook",
+  branch: "dep",
+  price: 100,
+  url: "http://builds.proximetry.com:10005/notifications/mail",
+  activ: false,
+  trigger: "hook"
+},{
+  id: "dephook",
+  branch: "dep",
+  price: 100,
+  url: "http://builds.proximetry.com:10005/notifications/mail",
+  activ: false,
+  trigger: "hook"
+},{
+  id: "dephook",
+  branch: "dep",
+  price: 100,
+  url: "http://builds.proximetry.com:10005/notifications/mail",
+  activ: false,
+  trigger: "hook"
 }];
 
-
+//------------------------------AXIOS-RestAPI-GET------------------------------------------
+class PersonList extends React.Component {
+  state = {
+    persons: []
+  }
+  componentDidMount() {
+    axios.get(`https://jsonplaceholder.typicode.com/users`)
+      .then(res => {
+        const persons = res.data;
+        this.setState({ persons });
+      })
+  }
+  render() {
+    return (
+      <ul>
+        { this.state.persons.map(person => <li>{person.name}</li>)}
+      </ul>
+    )
+  }
+}
+function personList() {
+  return (
+    <PersonList/>
+  );
+}
+//--------------------------------TRIGGER-COLUMN------------------------------------------
 class ActiveFormatter extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-          show: false,
+          show: false
         };
       }
-
-    
+// function to authorization
+    checked(){
+      this.setState({ show: false }),
+      this.props.active;
+    }
     render() {
       return (
         <div>
-        <input type='checkbox' checked={ this.props.active }  onClick={() => this.setState({ show: true })}/>
+        <input type='button' value="O" onClick={() => this.setState({ show: true })}/>
         <SweetAlert
         show={this.state.show}
         title="Authorization"
         text="Confirm your identity"
-        onConfirm={() => this.setState({ show: false })}
+        showCancelButton
+        onConfirm={() => this.checked()} // sign in google
+        onCancel={()=> this.setState({ show: false })}
         />
         </div>
       );
     }
   }
-  
-  function activeFormatter(cell) {
+  function activeFormatter() {
     return (
-      <ActiveFormatter active={ cell } />
+      <ActiveFormatter/>
     );
   }
-  
-class AppComponent1 extends React.Component {
 
+//------------------------------------MAIN-COMPONENT-------------------------------------------------------
+class AppComponent1 extends React.Component {
   render() {
     return (
     <BootstrapTable data={products} striped={true} hover={true} search={false}>
@@ -82,7 +140,6 @@ class AppComponent1 extends React.Component {
     );
   }
 }
-
 AppComponent1.defaultProps = {
 };
 
