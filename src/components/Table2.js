@@ -18,14 +18,29 @@ var products = [{
   url: "http://builds.proximetry.com:10005/notifications/mail",
   active: false,
   trigger: "hook"
+},{
+  id: "dephook",
+  branch: "dep",
+  price: 100,
+  url: "http://builds.proximetry.com:10005/notifications/mail",
+  active: false,
+  trigger: "hook"
+},{
+  id: "dephook",
+  branch: "dep",
+  price: 100,
+  url: "http://builds.proximetry.com:10005/notifications/mail",
+  active: false,
+  trigger: "hook"
 }];
+
 
 class AppComponent2 extends React.Component {
   render() {
     return (
       <BootstrapTable data={products} striped={true} hover={true}>
-        <TableHeaderColumn width='12%'dataField="price" dataSort={true} dataAlign="center">COMPANY</TableHeaderColumn>
-        <TableHeaderColumn width='45%'dataField="url" dataSort={true}>URL</TableHeaderColumn>
+        <TableHeaderColumn width='40%' dataField="id" dataSort={true} isKey={true} dataAlign="center">HOOK PATH</TableHeaderColumn>
+        <TableHeaderColumn width='60%' dataField="url" dataSort={true} dataAlign="center">SETUP URL</TableHeaderColumn>
       </BootstrapTable>
     );
   }

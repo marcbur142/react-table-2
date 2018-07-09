@@ -1,3 +1,7 @@
+:root {
+  --main-bg-color: #d12b4c; 
+}
+
 /* Base Application Styles */
 html{
   background-color:#fff;
@@ -7,45 +11,135 @@ body {
   color: #000;
   background: #222;
 }
-.index img {
-  margin: 40px auto;
-  border-radius: 4px;
-  background: #fff;
+#header{
+  background-color: #000;
+  position: absolute;
   display: block;
+  width: 100%;
+  height: 8%;
 }
-
-.index .notice {
-  margin: 20px auto;
-  padding: 15px 0;
-  text-align: center;
-  border: 1px solid #000;
-  border-width: 1px 0;
-  background: #666;
+#header img{
+  vertical-align: middle;
+  position: absolute;
+  height: 100%;
+  left: 2%;
 }
-
-
-#tableview{
+#header p{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-weight: bold;
+  font-size: 2.5vh;
+  letter-spacing: 2px;
+}
+#main{
+  width: 100%;
+  height: 92%;
+  top: 8%;
+  display: block;
+  position: absolute;
+}
+.container{
   width: 100%;
   height: 100%;
+  position: relative;
 }
-#tables{
-  width: 100%;
-  height: 100%;
-}
-#table1{
-  background-color: #fff;
+.belt{
+  background-color: var(--main-bg-color);
   position: absolute;
+  display: block;
+  width: 100%;
+  height: 8%;
+  left: 0;
+}
+#app{
   width: 90%;
-  height: 40%;
-  top: 5%;
-  left: 5%;
+  height: 70%;;
+  left:5%;
+  top: 16.5%;
+  display: block;
+  position: absolute;
+  z-index: 1000;
+}
+.nav-tabs{
+  position: absolute;
+  top: -22%;
+  height: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 0;
+}
+.nav-tabs>li>a{
+  font-size: 2vh !important;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+  color: #fff;
+  cursor: default;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid #fff;
+}
+.nav-tabs>li>a {
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 0 solid transparent;
+  border-radius: 0 0 0 0;
+  color: #000;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+}
+.react-bs-table-bordered {
+  border-radius: 0;
+}
+.react-bs-table-search-form{
+  width: 50%;
+  float: right;
 }
 
-#table2{
-  background-color: #fff;
+
+@media only screen and (max-width: 1000px) {
+  body,.sort-column{
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  #header p{
+    right: 5%;
+    transform: translate(0, -50%);
+    text-align: right;
+  }
+  .nav-tabs{
+    width: 100%;
+  }
+  .nav-tabs>li{
+    left: 44%;
+    transform: translateX(-66%);
+  }
+  .nav-tabs>li>a{
+    font-size: 1.6vh !important;
+  }
+}
+
+#popup{
+  display: block;
   position: absolute;
-  width: 90%;
-  height: 40%;
-  top: 55%;
-  left: 5%;
+  top:99%;
+  height: 1%;
+  width: 100%;
+  z-index: 1000;
+}
+.sweet-alert{
+  border-radius: 0;
+}
+.sweet-alert button {
+  -webkit-border-radius:0; 
+  border-radius: 0; 
+  background-color: var(--main-bg-color);
+}
+.confirm{
+  background-color: var(--main-bg-color) !important;
 }
