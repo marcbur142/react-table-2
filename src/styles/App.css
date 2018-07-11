@@ -11,6 +11,7 @@ body {
   color: #000;
   background: #222;
 }
+<<<<<<< HEAD
 #header{
   background-color: #000;
   position: absolute;
@@ -149,4 +150,72 @@ html input[type=button]:focus{
 }
 .confirm{
   background-color: var(--main-bg-color) !important;
+=======
+
+#tableview{
+  width: 90%;
+  left:5%;
+  top: 24%;
+  display: block;
+  position: absolute;
+}
+
+#header{
+  background-color: #000;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 9%;
+}
+#header img{
+  vertical-align: middle;
+  position: absolute;
+  height: 100%;
+  left: 2%;
+}
+#header p{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+#belt{
+  background-color: #d12b4c;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 9%;
+  top:9%;
+}
+
+.nav-tabs{
+  position: absolute;
+  top: -45%;
+  height: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 0;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+  color: #fff;
+  cursor: default;
+  background-color: transparent;
+  border-bottom: 4px solid #fff;
+}
+.nav-tabs>li>a {
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 0 solid transparent;
+  border-radius: 0 0 0 0;
+  color: #000;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+>>>>>>> 97b92824d14bc2c50d4ce8816befaa249b82cfc5
 }

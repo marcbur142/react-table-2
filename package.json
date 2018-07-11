@@ -61,7 +61,10 @@
     "webpack-dev-server": "^1.12.0"
   },
   "dependencies": {
+<<<<<<< HEAD
     "axios": "^0.18.0",
+=======
+>>>>>>> 97b92824d14bc2c50d4ce8816befaa249b82cfc5
     "babel-core": "^6.0.0",
     "babel-eslint": "^6.0.0",
     "babel-loader": "^6.0.0",
