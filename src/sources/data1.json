@@ -1,0 +1,45 @@
+[
+ {
+  "id": "mail",
+  "branch": "asp",
+  "price": 100,
+  "url": "http://builds.proximetry.com:10005/notifications/mail",
+  "activ": true,
+  "trigger": "hook"
+ },{
+  "id": "dephook",
+  "branch": "dep",
+  "price": 100,
+  "url": "http://builds.proximetry.com:10005/notifications/mail",
+  "activ": false,
+  "trigger": "hook"
+},{
+  "id": "dephook",
+  "branch": "dep",
+  "price": 100,
+  "url": "http://builds.proximetry.com:10005/notifications/mail",
+  "activ": false,
+  "trigger": "hook"
+},{
+  "id": "dephook",
+  "branch": "dep",
+  "price": 100,
+  "url": "http://builds.proximetry.com:10005/notifications/mail",
+  "activ": false,
+  "trigger": "hook"
+},{
+  "id": "dephook",
+  "branch": "dep",
+  "price": 100,
+  "url": "http://builds.proximetry.com:10005/notifications/mail",
+  "activ": false,
+  "trigger": "hook"
+},{
+  "id": "dephook",
+  "branch": "dep",
+  "price": 100,
+  "url": "http://builds.proximetry.com:10005/notifications/mail",
+  "activ": false,
+  "trigger": "hook"
+}
+]

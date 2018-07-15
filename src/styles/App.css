@@ -1,5 +1,6 @@
 :root {
   --main-bg-color: #d12b4c;
+  --main-bg-blur-color: rgba(209,43,76,0.8);
 }
 
 /* Base Application Styles */
@@ -11,7 +12,6 @@ body {
   color: #000;
   background: #222;
 }
-<<<<<<< HEAD
 #header{
   background-color: #000;
   position: absolute;
@@ -35,6 +35,23 @@ body {
   font-weight: bold;
   font-size: 2.5vh;
   letter-spacing: 2px;
+}
+#btn{
+  position: absolute;
+  width: 76px;
+  height: 100%;
+  right: 1.5%;
+}
+#my-signin2{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.abcRioButtonBlue{
+  background-color: #fff !important;
+}
+.abcRioButtonContents{
+  color: #000;
 }
 #main{
   width: 100%;
@@ -108,6 +125,40 @@ html input[type=button]{
 html input[type=button]:focus{
   outline:0;
 }
+.activelink{
+  color: var(--main-bg-color);
+  opacity: 0.7;
+}
+.table1-container{
+  width: 100%;
+  position: absolute;
+}
+.table2-container{
+  width: 76%;
+  left:12%;
+  position: absolute;
+}
+.react-bs-table-tool-bar{
+  position: absolute;
+  top: -2%;
+  width: 100%;
+  height: 5%;
+}
+.form-group-sm .form-control{
+ text-align: center;
+ border-radius: 0;
+}
+.react-bs-table-search-form {
+  width: 35%;
+  float: none;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+.form-control:focus{
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 2px var(--main-bg-blur-color);
+  border: 0 solid transparent;
+}
 
 @media only screen and (max-width: 1000px) {
   body,.sort-column{
@@ -116,9 +167,10 @@ html input[type=button]:focus{
 }
 @media only screen and (max-width: 700px) {
   #header p{
-    right: 5%;
-    transform: translate(0, -50%);
-    text-align: right;
+    font-size: 2vh;
+  }
+  #btn{
+    right: 2.5%;
   }
   .nav-tabs{
     width: 100%;
@@ -129,6 +181,19 @@ html input[type=button]:focus{
   }
   .nav-tabs>li>a{
     font-size: 1.6vh !important;
+  }
+  .react-bs-table-search-form {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  #header p{
+    display: none;
+  }
+}
+@media only screen and (max-height: 700px) {
+  .react-bs-table-tool-bar{
+    bottom: -20%;
   }
 }
 
@@ -149,73 +214,29 @@ html input[type=button]:focus{
   background-color: var(--main-bg-color);
 }
 .confirm{
+  /* background-image: url("/images/signin.png") !important; */
   background-color: var(--main-bg-color) !important;
-=======
-
-#tableview{
-  width: 90%;
-  left:5%;
-  top: 24%;
-  display: block;
-  position: absolute;
+  background-size: contain;
+  width: 120px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 1px var(--main-bg-color);
 }
-
-#header{
-  background-color: #000;
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 9%;
+.cancel{
+  background-color: var(--main-bg-color) !important;
 }
-#header img{
-  vertical-align: middle;
+.log{
   position: absolute;
-  height: 100%;
-  left: 2%;
+  bottom: 10px;
 }
-#header p{
+#button{
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  font-weight: bold;
-  font-size: 20px;
-  letter-spacing: 2px;
-}
-#belt{
-  background-color: #d12b4c;
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 9%;
-  top:9%;
+  width: 20%;
+  height: 20%;
 }
 
-.nav-tabs{
-  position: absolute;
-  top: -45%;
-  height: 7%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 0;
-}
-
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
-  color: #fff;
-  cursor: default;
-  background-color: transparent;
-  border-bottom: 4px solid #fff;
-}
-.nav-tabs>li>a {
-  margin-right: 2px;
-  line-height: 1.42857143;
-  border: 0 solid transparent;
-  border-radius: 0 0 0 0;
-  color: #000;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  font-weight: bold;
-  font-size: 18px;
->>>>>>> 97b92824d14bc2c50d4ce8816befaa249b82cfc5
+@media only screen and (max-height: 700px) {
+  .g-signin2{
+    right: 1%;
+    height: 3%;
+    width: 10%;
+  }
 }

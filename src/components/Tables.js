@@ -7,23 +7,22 @@ import Tabs from 'react-bootstrap/lib/Tabs';
 import Table1 from './Table1';
 import Table2 from './Table2';
 
-
-class AppComponent0 extends React.Component {
+class AppComponent extends React.Component {
   render() {
     return (
     <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
-    <Tab eventKey={1}>
+      <Tab eventKey={1} title="Webhooks">
         <Table1/>
-    </Tab>
-    <Tab eventKey={2}>
+      </Tab>
+      <Tab eventKey={2} title="Paths">
         <Table2/>
-    </Tab>
+      </Tab>
     </Tabs>
     );
   }
 }
-
-AppComponent0.defaultProps = {
+AppComponent.defaultProps = {
 };
+export default AppComponent;
 
-export default AppComponent0;
+//ngrok http 8080 -host-header="localhost:8080"

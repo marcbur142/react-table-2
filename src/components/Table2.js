@@ -2,51 +2,49 @@ require('normalize.css/normalize.css');
 require('styles/App.css');
 
 import React from 'react';
+import axios from 'axios';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
-
-var products = [{
-  id: "mail",
-  branch: "asp",
-  price: 100,
-  url: "http://builds.proximetry.com:10005/notifications/mail",
-  active: true,
-  trigger: "hook"
-},{
-  id: "dephook",
-  branch: "dep",
-  price: 100,
-  url: "http://builds.proximetry.com:10005/notifications/mail",
-  active: false,
-  trigger: "hook"
-},{
-  id: "dephook",
-  branch: "dep",
-  price: 100,
-  url: "http://builds.proximetry.com:10005/notifications/mail",
-  active: false,
-  trigger: "hook"
-},{
-  id: "dephook",
-  branch: "dep",
-  price: 100,
-  url: "http://builds.proximetry.com:10005/notifications/mail",
-  active: false,
-  trigger: "hook"
-}];
 
 
 class AppComponent2 extends React.Component {
-  render() {
+  state = {
+    hooks: []
+  }
+  componentDidMount() {
+    axios.get(`http://localhost:3000/webhooks`)
+      .then(res => {
+        const hooks = res.data;
+        this.setState({ hooks });
+        this.props.hooks
+      })
+  }
+    //------------------------------------------ACTIVE-LINK------------------------------------------------
+  urlFormatter(cell, row) {
+    return `<a class="activelink" href=${cell}>${cell}</a>`;
+  }
+  //----------------------------------------------TOOLBAR--------------------------------------------------
+  createCustomToolBar = props => {
     return (
-      <BootstrapTable data={products} striped={true} hover={true}>
-        <TableHeaderColumn width='40%' dataField="id" dataSort={true} isKey={true} dataAlign="center">HOOK PATH</TableHeaderColumn>
-        <TableHeaderColumn width='60%' dataField="url" dataSort={true} dataAlign="center">SETUP URL</TableHeaderColumn>
+      <div>
+        { props.components.btnGroup }
+        <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+          { props.components.searchPanel }
+        </div>
+      </div>
+    );
+  }
+  render() {
+    const options = {
+      toolBar: this.createCustomToolBar
+    };
+    return (
+      <BootstrapTable data={this.state.hooks} options={options} striped={true} hover={true} containerClass='table2-container' search={true} searchPlaceholder='Search in table'>
+        <TableHeaderColumn width='100' dataField="id" dataSort={true} isKey={true} dataAlign="center">HOOK PATH</TableHeaderColumn>
+        <TableHeaderColumn width='260' dataField="url" dataSort={true} dataFormat={ this.urlFormatter } dataAlign="center" >SETUP URL</TableHeaderColumn>
       </BootstrapTable>
     );
   }
 }
-
 AppComponent2.defaultProps = {
 };
-
 export default AppComponent2;
